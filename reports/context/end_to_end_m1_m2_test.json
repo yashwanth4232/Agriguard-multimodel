@@ -1,0 +1,127 @@
+{
+  "test_type": "M2-005 isolated Model 1 to Model 2 end-to-end test",
+  "input": {
+    "image_path": "test_leaf.jpg",
+    "growth_stage": "Flowering",
+    "location": {
+      "source": "user_selected",
+      "latitude": 17.385,
+      "longitude": 78.4867
+    }
+  },
+  "model1_prediction": {
+    "image_path": "D:\\projects\\AgriGuard-Multimodal\\test_leaf.jpg",
+    "predicted_index": 29,
+    "predicted_label": "Tomato___Early_blight",
+    "confidence": 0.9400433301925659,
+    "output_dimension": 38
+  },
+  "normalized_agricultural_context": {
+    "crop": "Tomato",
+    "disease": "Tomato___Early_blight",
+    "model1_confidence": 0.9400433301925659,
+    "growth_stage": "Flowering",
+    "growth_stage_description": "Flowers are appearing on the plant.",
+    "location_status": "available",
+    "location_source": "user_selected",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "temperature_c": 29.2,
+    "humidity_percent": 60.0,
+    "precipitation_mm": 0.1,
+    "weather_condition": 51,
+    "context_timestamp": "2026-08-13T10:00",
+    "weather_status": "available",
+    "weather_provider": "Open-Meteo",
+    "weather_documentation_url": "https://open-meteo.com/en/docs",
+    "weather_endpoint": "https://api.open-meteo.com/v1/forecast",
+    "weather_query_parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,relative_humidity_2m,precipitation,weather_code",
+      "temperature_unit": "celsius",
+      "precipitation_unit": "mm",
+      "timeformat": "iso8601",
+      "timezone": "GMT"
+    },
+    "weather_requested_variables": [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "precipitation",
+      "weather_code"
+    ],
+    "weather_units": {
+      "temperature_2m": "\u00b0C",
+      "relative_humidity_2m": "%",
+      "precipitation": "mm",
+      "weather_code": "wmo code"
+    },
+    "precipitation_semantics": "Open-Meteo current-condition precipitation (rain + showers + snow) in mm; it is not daily rainfall. Open-Meteo documents current conditions as based on 15-minutely weather-model data.",
+    "weather_request_timestamp": "2026-08-13T10:07:15.890262Z",
+    "weather_raw_response": {
+      "latitude": 17.398945,
+      "longitude": 78.457085,
+      "generationtime_ms": 0.18608570098876953,
+      "utc_offset_seconds": 0,
+      "timezone": "GMT",
+      "timezone_abbreviation": "GMT",
+      "elevation": 505.0,
+      "current_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature_2m": "\u00b0C",
+        "relative_humidity_2m": "%",
+        "precipitation": "mm",
+        "weather_code": "wmo code"
+      },
+      "current": {
+        "time": "2026-08-13T10:00",
+        "interval": 900,
+        "temperature_2m": 29.2,
+        "relative_humidity_2m": 60,
+        "precipitation": 0.1,
+        "weather_code": 51
+      }
+    },
+    "image_capture_timestamp": null
+  },
+  "checks": {
+    "image_exists": true,
+    "model1_output_dimension": true,
+    "model1_label_is_authoritative": true,
+    "model1_confidence_is_probability": true,
+    "crop_extracted": true,
+    "disease_preserved": true,
+    "growth_stage_preserved": true,
+    "location_source_preserved": true,
+    "requested_coordinates_preserved": true,
+    "live_weather_available": true,
+    "provider_recorded": true,
+    "raw_weather_response_preserved": true,
+    "protected_model1_artifacts_unchanged": true
+  },
+  "protected_artifact_hashes_before": {
+    "models\\agriguard_mobilenetv2.keras": "ec85000f75c76935e3c6a54a13abd4e8e3feb5b8187c4ebb5d5c8166b387c91b",
+    "models\\class_names.json": "34679ce2a4ca1fba70a8ec6bdb5f07e75efee923685fdce2abc5a562004477cf",
+    "experiments\\training_history.csv": "7e3b8c47ff7b6d428d33d0174c44e87b6785ef766534a62904f48f9e80006a51",
+    "experiments\\experiment_config.json": "a4bd52e33f02c8ffb7e785eca5993c6b73e132932f8157983a39be2a12d3ba64",
+    "experiments\\test_metrics.json": "c96f6a5cbfc03de310d367f6f9dd532580945d6d36c5a4e0fabf9057d0b9955b",
+    "experiments\\classification_report.csv": "42a57c2744974f478f858f4957114db2e8a9fdf1fc085b096acafb5e7093032a",
+    "experiments\\confusion_matrix.csv": "801aeec2a5495c1dbd3fbd10e8448090be206ee2828d986cd305f105953c4f2f",
+    "reports\\figures\\training_accuracy.png": "f0e68f6d6791f3ed2e0aba7cfca96fbd52029acdce2405a53cdd6a6f5e21b86f",
+    "reports\\figures\\training_loss.png": "c7f0b0c3ea675ddef5aa381a99246f68a0042d8d8a9875dbbbbcbddd9d7c308a",
+    "reports\\figures\\confusion_matrix.png": "3974511b5f1ecea35d5836daeeacd0958ea211db91304778236ca71003a15a3a"
+  },
+  "protected_artifact_hashes_after": {
+    "models\\agriguard_mobilenetv2.keras": "ec85000f75c76935e3c6a54a13abd4e8e3feb5b8187c4ebb5d5c8166b387c91b",
+    "models\\class_names.json": "34679ce2a4ca1fba70a8ec6bdb5f07e75efee923685fdce2abc5a562004477cf",
+    "experiments\\training_history.csv": "7e3b8c47ff7b6d428d33d0174c44e87b6785ef766534a62904f48f9e80006a51",
+    "experiments\\experiment_config.json": "a4bd52e33f02c8ffb7e785eca5993c6b73e132932f8157983a39be2a12d3ba64",
+    "experiments\\test_metrics.json": "c96f6a5cbfc03de310d367f6f9dd532580945d6d36c5a4e0fabf9057d0b9955b",
+    "experiments\\classification_report.csv": "42a57c2744974f478f858f4957114db2e8a9fdf1fc085b096acafb5e7093032a",
+    "experiments\\confusion_matrix.csv": "801aeec2a5495c1dbd3fbd10e8448090be206ee2828d986cd305f105953c4f2f",
+    "reports\\figures\\training_accuracy.png": "f0e68f6d6791f3ed2e0aba7cfca96fbd52029acdce2405a53cdd6a6f5e21b86f",
+    "reports\\figures\\training_loss.png": "c7f0b0c3ea675ddef5aa381a99246f68a0042d8d8a9875dbbbbcbddd9d7c308a",
+    "reports\\figures\\confusion_matrix.png": "3974511b5f1ecea35d5836daeeacd0958ea211db91304778236ca71003a15a3a"
+  }
+}

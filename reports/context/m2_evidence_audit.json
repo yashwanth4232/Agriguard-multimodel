@@ -1,0 +1,55 @@
+{
+  "record_type": "M2-004 research evidence audit",
+  "weather_provider_contract": {
+    "provider": "Open-Meteo",
+    "documentation_url": "https://open-meteo.com/en/docs",
+    "endpoint": "https://api.open-meteo.com/v1/forecast",
+    "query_parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,relative_humidity_2m,precipitation,weather_code",
+      "temperature_unit": "celsius",
+      "precipitation_unit": "mm",
+      "timeformat": "iso8601",
+      "timezone": "GMT"
+    },
+    "requested_variables": ["temperature_2m", "relative_humidity_2m", "precipitation", "weather_code"],
+    "units": {
+      "temperature_2m": "°C",
+      "relative_humidity_2m": "%",
+      "precipitation": "mm",
+      "weather_code": "wmo code"
+    },
+    "precipitation_semantics": "Open-Meteo current-condition precipitation (rain + showers + snow) in mm; it is not daily rainfall. Open-Meteo documents current conditions as based on 15-minutely weather-model data."
+  },
+  "verified_controlled_context": {
+    "location_source": "user_selected",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "model1_predicted_label": "Tomato___Early_blight",
+    "model1_confidence": 0.9400433,
+    "crop": "Tomato",
+    "disease_label": "Tomato___Early_blight",
+    "growth_stage_coverage": ["Seedling", "Vegetative", "Flowering", "Fruiting", "Maturity", "Unknown"]
+  },
+  "unavailable_live_evidence": {
+    "raw_open_meteo_response": null,
+    "normalized_context": null,
+    "weather_request_timestamp": null,
+    "context_timestamp": null,
+    "reason": "Not persisted by the successful verifier and no terminal output was attached to this task. Values are intentionally not reconstructed."
+  },
+  "protected_artifact_hashes": {
+    "models/agriguard_mobilenetv2.keras": "EC85000F75C76935E3C6A54A13ABD4E8E3FEB5B8187C4EBB5D5C8166B387C91B",
+    "models/class_names.json": "34679CE2A4CA1FBA70A8EC6BDB5F07E75EFEE923685FDCE2ABC5A562004477CF",
+    "experiments/training_history.csv": "7E3B8C47FF7B6D428D33D0174C44E87B6785EF766534A62904F48F9E80006A51",
+    "experiments/experiment_config.json": "A4BD52E33F02C8FFB7E785ECA5993C6B73E132932F8157983A39BE2A12D3BA64",
+    "experiments/test_metrics.json": "C96F6A5CBFC03DE310D367F6F9DD532580945D6D36C5A4E0FABF9057D0B9955B",
+    "experiments/classification_report.csv": "42A57C2744974F478F858F4957114DB2E8A9FDF1FC085B096ACAFB5E7093032A",
+    "experiments/confusion_matrix.csv": "801AEEC2A5495C1DBD3FBD10E8448090BE206EE2828D986CD305F105953C4F2F",
+    "reports/figures/training_accuracy.png": "F0E68F6D6791F3ED2E0ABA7CFCA96FBD52029ACDCE2405A53CDD6A6F5E21B86F",
+    "reports/figures/training_loss.png": "C7F0B0C3EA675DDEF5AA381A99246F68A0042D8D8A9875DBBBBCBDDD9D7C308A",
+    "reports/figures/confusion_matrix.png": "3974511B5F1ECEA35D5836DAEEACD0958EA211DB91304778236CA71003A15A3A"
+  },
+  "integrity_result": "All protected Model 1 hashes match the M2-002/M2-003 baseline hashes. No protected Model 1 artifact changed."
+}

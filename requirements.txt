@@ -1,0 +1,8 @@
+# Model 1 baseline — Python 3.10, Windows-compatible pins.
+# TensorFlow 2.15.x requires NumPy >=1.23.5 and <2.0.
+tensorflow==2.15.1
+numpy>=1.26.4,<2.0
+pandas==2.2.3
+scikit-learn==1.5.2
+matplotlib==3.9.2
+Pillow==11.0.0

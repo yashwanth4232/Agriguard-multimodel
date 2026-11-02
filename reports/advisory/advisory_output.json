@@ -1,0 +1,155 @@
+{
+  "advisory_type": "deterministic_source_grounded",
+  "diagnosis": {
+    "source": "Model 1",
+    "predicted_label": "Tomato___Early_blight",
+    "predicted_index": 29,
+    "confidence": 0.9400433301925659,
+    "unchanged": true
+  },
+  "current_context": {
+    "crop": "Tomato",
+    "disease": "Tomato___Early_blight",
+    "model1_confidence": 0.9400433301925659,
+    "growth_stage": "Flowering",
+    "growth_stage_description": "Flowers are appearing on the plant.",
+    "location_status": "available",
+    "location_source": "user_selected",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "temperature_c": 29.2,
+    "humidity_percent": 60.0,
+    "precipitation_mm": 0.1,
+    "weather_condition": 51,
+    "context_timestamp": "2026-08-13T10:00",
+    "weather_status": "available",
+    "weather_provider": "Open-Meteo",
+    "weather_documentation_url": "https://open-meteo.com/en/docs",
+    "weather_endpoint": "https://api.open-meteo.com/v1/forecast",
+    "weather_query_parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,relative_humidity_2m,precipitation,weather_code",
+      "temperature_unit": "celsius",
+      "precipitation_unit": "mm",
+      "timeformat": "iso8601",
+      "timezone": "GMT"
+    },
+    "weather_requested_variables": [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "precipitation",
+      "weather_code"
+    ],
+    "weather_units": {
+      "temperature_2m": "\u00b0C",
+      "relative_humidity_2m": "%",
+      "precipitation": "mm",
+      "weather_code": "wmo code"
+    },
+    "precipitation_semantics": "Open-Meteo current-condition precipitation (rain + showers + snow) in mm; it is not daily rainfall. Open-Meteo documents current conditions as based on 15-minutely weather-model data.",
+    "weather_request_timestamp": "2026-08-13T10:07:15.890262Z",
+    "weather_raw_response": {
+      "latitude": 17.398945,
+      "longitude": 78.457085,
+      "generationtime_ms": 0.18608570098876953,
+      "utc_offset_seconds": 0,
+      "timezone": "GMT",
+      "timezone_abbreviation": "GMT",
+      "elevation": 505.0,
+      "current_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature_2m": "\u00b0C",
+        "relative_humidity_2m": "%",
+        "precipitation": "mm",
+        "weather_code": "wmo code"
+      },
+      "current": {
+        "time": "2026-08-13T10:00",
+        "interval": 900,
+        "temperature_2m": 29.2,
+        "relative_humidity_2m": 60,
+        "precipitation": 0.1,
+        "weather_code": 51
+      }
+    },
+    "image_capture_timestamp": null
+  },
+  "visual_explanation": {
+    "available": true,
+    "source": "Grad-CAM for Model 1",
+    "target_class": "Tomato___Early_blight",
+    "target_class_index": 29,
+    "target_layer_name": "out_relu",
+    "heatmap_reference": "reports\\xai\\gradcam_raw_heatmap.npy",
+    "overlay_reference": "reports\\xai\\gradcam_overlay.png"
+  },
+  "advisory_guidance": {
+    "status": "available",
+    "condition_type": "disease",
+    "entries": [
+      {
+        "guidance_id": "tomato-early-blight-monitoring-01",
+        "category": "monitoring",
+        "growth_stages": [],
+        "evidence_statement": "The source says to scout regularly so management can begin when early blight appears.",
+        "source_id": "S1",
+        "source_section": "Managing early blight on farms - Monitoring",
+        "source_reference": "S1",
+        "review_status": "pending_human_review"
+      },
+      {
+        "guidance_id": "tomato-early-blight-cultural-01",
+        "category": "cultural_control",
+        "growth_stages": [],
+        "evidence_statement": "The source documents cultural controls including crop rotation, foliage-drying practices, sanitation, and barriers between contaminated soil and leaves.",
+        "source_id": "S1",
+        "source_section": "Managing early blight on farms - Cultural controls",
+        "source_reference": "S1",
+        "review_status": "pending_human_review"
+      }
+    ],
+    "selected_guidance_ids": [
+      "tomato-early-blight-monitoring-01",
+      "tomato-early-blight-cultural-01"
+    ],
+    "excluded_guidance": []
+  },
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Early blight in tomato and potato",
+      "organization": "University of Minnesota Extension",
+      "source_type": "university_extension",
+      "url": "https://extension.umn.edu/disease-management/early-blight-tomato-and-potato",
+      "jurisdiction": "United States",
+      "accessed_at": "2026-08-13",
+      "verification_status": "verified",
+      "notes": "Tomato and potato early blight; includes monitoring, cultural controls and a chemical-control section."
+    }
+  ],
+  "availability": {
+    "weather_available": true,
+    "location_available": true,
+    "growth_stage_known": true,
+    "xai_available": true,
+    "advisory_available": true
+  },
+  "limitations": [
+    "Current weather is not image-capture-time weather.",
+    "Context does not independently diagnose or confirm disease.",
+    "No confidence threshold policy is defined; the exact Model 1 confidence is preserved without a confidence band.",
+    "Current weather is context only and is not weather at image capture time.",
+    "Knowledge-base evidence remains pending human review."
+  ],
+  "provenance": {
+    "fusion_type": "deterministic_context_association",
+    "knowledge_base_version": "0.1.0",
+    "knowledge_base_review_status": "pending_human_review",
+    "source_registry_schema_version": "1.0",
+    "policy_version": "1.0.0",
+    "generated_at": "2026-08-13T00:00:00Z"
+  },
+  "safety_disclaimer": "This source-grounded information is associated with the Model 1 prediction and available current context. It does not confirm the diagnosis, establish cause, or guarantee crop recovery. Follow locally applicable agricultural and product-label guidance."
+}

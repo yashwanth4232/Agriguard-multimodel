@@ -1,0 +1,101 @@
+{
+  "run_started_at_utc": "2026-08-13T00:51:59.499771+00:00",
+  "training_duration_seconds": 22265.676709599997,
+  "random_seed": 42,
+  "image_size": [
+    224,
+    224,
+    3
+  ],
+  "batch_size": 32,
+  "num_classes": 38,
+  "optimizer": "Adam",
+  "loss": "SparseCategoricalCrossentropy",
+  "training_metric": "accuracy",
+  "callbacks": [
+    {
+      "name": "ModelCheckpoint",
+      "monitor": "val_accuracy",
+      "mode": "max",
+      "save_best_only": true
+    }
+  ],
+  "resource_controls": {
+    "inter_op_parallelism_threads": 2,
+    "intra_op_parallelism_threads": 2,
+    "dataset_private_threadpool_size": 2,
+    "dataset_max_intra_op_parallelism": 1
+  },
+  "stage_a": {
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "backbone": "MobileNetV2 ImageNet pretrained",
+    "backbone_frozen": true,
+    "trainable_layer_names": [
+      "global_average_pooling2d",
+      "dropout",
+      "predictions"
+    ]
+  },
+  "stage_b": {
+    "epochs": 10,
+    "learning_rate": 1e-05,
+    "fine_tune_at": 124,
+    "unfrozen_backbone_layers": 30,
+    "trainable_layer_names": [
+      "block_13_project_BN",
+      "block_14_expand",
+      "block_14_expand_BN",
+      "block_14_expand_relu",
+      "block_14_depthwise",
+      "block_14_depthwise_BN",
+      "block_14_depthwise_relu",
+      "block_14_project",
+      "block_14_project_BN",
+      "block_14_add",
+      "block_15_expand",
+      "block_15_expand_BN",
+      "block_15_expand_relu",
+      "block_15_depthwise",
+      "block_15_depthwise_BN",
+      "block_15_depthwise_relu",
+      "block_15_project",
+      "block_15_project_BN",
+      "block_15_add",
+      "block_16_expand",
+      "block_16_expand_BN",
+      "block_16_expand_relu",
+      "block_16_depthwise",
+      "block_16_depthwise_BN",
+      "block_16_depthwise_relu",
+      "block_16_project",
+      "block_16_project_BN",
+      "Conv_1",
+      "Conv_1_bn",
+      "out_relu",
+      "global_average_pooling2d",
+      "dropout",
+      "predictions"
+    ]
+  },
+  "selection": {
+    "split": "validation",
+    "criterion": "maximum val_accuracy across Stage A and Stage B",
+    "selected_global_epoch": 29,
+    "selected_stage": "stage_b_fine_tuning",
+    "selected_validation_accuracy": 0.9798575043678284
+  },
+  "evaluation": {
+    "split": "test",
+    "performed_once_after_selection": true
+  },
+  "split_counts": {
+    "train": 38004,
+    "validation": 8142,
+    "test": 8159
+  },
+  "split_assignments_sha256_before_training": "b62f8b5cdb46813df4268e67769f465e5495cd68633dc0f3206c3871b0f78164",
+  "class_to_index_sha256_before_training": "27ae10db737b7da5596dbdbcc62effa006fb3b1d60ae0cd7d6bead2348b172e8",
+  "augmentation": "Training split only; validation and test augmentation disabled.",
+  "preprocessing": "RGB resize to 224x224 followed by MobileNetV2 preprocess_input."
+}

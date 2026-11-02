@@ -1,0 +1,231 @@
+
+# ============================================================
+# AGRIGUARD
+# Multi-Modal AI Framework for Crop Disease Diagnosis
+# ============================================================
+
+
+# ------------------------------------------------------------
+# 1. PYTHON
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# ------------------------------------------------------------
+# 2. VIRTUAL ENVIRONMENTS
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+ENV.bak/
+venv.bak/
+
+.pip-cache/
+pip-log.txt
+pip-delete-this-directory.txt
+.python-version
+
+
+# ------------------------------------------------------------
+# 3. IDE AND EDITOR FILES
+# ------------------------------------------------------------
+.idea/
+.vscode/
+.cursor/
+
+*.swp
+*.swo
+*~
+
+.project
+.pydevproject
+.settings/
+
+*.sublime-project
+*.sublime-workspace
+
+
+# ------------------------------------------------------------
+# 4. OPERATING SYSTEM FILES
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+
+# ------------------------------------------------------------
+# 5. SECRETS AND ENVIRONMENT FILES
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+secrets/
+credentials.json
+service-account*.json
+firebase-adminsdk*.json
+
+
+# ------------------------------------------------------------
+# 6. JUPYTER NOTEBOOKS
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+
+
+# ------------------------------------------------------------
+# 7. TESTING AND COVERAGE
+# ------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+.tox/
+.nox/
+
+coverage.xml
+*.cover
+
+
+# ------------------------------------------------------------
+# 8. MACHINE LEARNING MODEL WEIGHTS
+# Keep large trained models out of Git.
+# Preserve class mappings and lightweight metadata.
+# ------------------------------------------------------------
+models/*.keras
+models/*.h5
+models/*.pb
+models/*.tflite
+models/*.onnx
+models/*.pkl
+models/*.joblib
+
+models/checkpoints/
+models/saved_model/
+
+
+# ------------------------------------------------------------
+# 9. DATASETS
+# Exclude PlantVillage images and local dataset copies.
+# Preserve dataset documentation and metadata.
+# ------------------------------------------------------------
+data/raw/**
+
+!data/raw/README.md
+!data/raw/.gitkeep
+
+# Processed dataset files are excluded by default.
+data/processed/*
+
+# Preserve reproducibility and research metadata.
+!data/processed/README.md
+!data/processed/.gitkeep
+!data/processed/class_to_index.json
+!data/processed/split_assignments.csv
+
+# Dataset metadata is intentionally preserved.
+# data/metadata/ is NOT ignored.
+
+
+# ------------------------------------------------------------
+# 10. APPLICATION RUNTIME
+# Exclude temporary uploads and runtime-generated files.
+# ------------------------------------------------------------
+instance/
+
+# User-uploaded test images.
+# Keep permanent application assets.
+static/generated/
+
+/test_leaf.jpg
+
+
+# ------------------------------------------------------------
+# 11. EXPERIMENTS AND TRAINING EVIDENCE
+# Preserve research results and reproducibility files.
+# ------------------------------------------------------------
+
+# Ignore only temporary monitoring and cache directories.
+experiments/tensorboard/
+experiments/wandb/
+experiments/tmp/
+experiments/temp/
+
+# Keep training history, metrics, configurations and logs.
+# Do not globally ignore CSV, JSON or LOG files.
+
+
+# ------------------------------------------------------------
+# 12. RESEARCH REPORTS AND FIGURES
+# Preserve research evidence, graphs and verification files.
+# ------------------------------------------------------------
+
+# Ignore only temporary report files.
+reports/tmp/
+reports/temp/
+
+# Keep:
+# reports/figures/
+# reports/xai/
+# reports/context/
+# reports/fusion/
+# reports/advisory/
+
+
+# ------------------------------------------------------------
+# 13. TENSORFLOW AND KERAS CACHES
+# ------------------------------------------------------------
+.keras/
+tensorboard/
+
+
+# ------------------------------------------------------------
+# 14. LOGS AND TEMPORARY FILES
+# ------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+
+# Do not globally ignore *.log.
+# Experiment logs may be important research evidence.
+
+
+# ------------------------------------------------------------
+# 15. GENERATED OOD CACHE
+# ------------------------------------------------------------
+ood_cache/
+
+
+# ------------------------------------------------------------
+# 16. LOCAL BACKUP FILES
+# ------------------------------------------------------------
+*.bak
+*.old
+*.orig
+*.rej

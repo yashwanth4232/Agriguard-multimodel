@@ -1,0 +1,14 @@
+{
+  "record_type": "M2-003 verification result preservation",
+  "status": "passed",
+  "execution_source": "user-confirmed",
+  "commands": [
+    ".\\.venv\\Scripts\\python.exe testing\\verify_m2_context.py",
+    ".\\.venv\\Scripts\\python.exe testing\\verify_m2_context.py --live-weather"
+  ],
+  "live_open_meteo_request": true,
+  "individual_check_output": null,
+  "individual_check_output_status": "not captured in the workspace",
+  "raw_response_status": "not captured in the workspace",
+  "normalized_context_status": "not captured in the workspace"
+}

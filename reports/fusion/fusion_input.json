@@ -1,0 +1,86 @@
+{
+  "visual_evidence": {
+    "predicted_index": 29,
+    "predicted_label": "Tomato___Early_blight",
+    "crop": "Tomato",
+    "disease": "Tomato___Early_blight",
+    "confidence": 0.9400433301925659,
+    "model_artifact_sha256": "ec85000f75c76935e3c6a54a13abd4e8e3feb5b8187c4ebb5d5c8166b387c91b"
+  },
+  "context_evidence": {
+    "crop": "Tomato",
+    "disease": "Tomato___Early_blight",
+    "model1_confidence": 0.9400433301925659,
+    "growth_stage": "Flowering",
+    "growth_stage_description": "Flowers are appearing on the plant.",
+    "location_status": "available",
+    "location_source": "user_selected",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "temperature_c": 29.2,
+    "humidity_percent": 60.0,
+    "precipitation_mm": 0.1,
+    "weather_condition": 51,
+    "context_timestamp": "2026-08-13T10:00",
+    "weather_status": "available",
+    "weather_provider": "Open-Meteo",
+    "weather_documentation_url": "https://open-meteo.com/en/docs",
+    "weather_endpoint": "https://api.open-meteo.com/v1/forecast",
+    "weather_query_parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,relative_humidity_2m,precipitation,weather_code",
+      "temperature_unit": "celsius",
+      "precipitation_unit": "mm",
+      "timeformat": "iso8601",
+      "timezone": "GMT"
+    },
+    "weather_requested_variables": [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "precipitation",
+      "weather_code"
+    ],
+    "weather_units": {
+      "temperature_2m": "\u00b0C",
+      "relative_humidity_2m": "%",
+      "precipitation": "mm",
+      "weather_code": "wmo code"
+    },
+    "precipitation_semantics": "Open-Meteo current-condition precipitation (rain + showers + snow) in mm; it is not daily rainfall. Open-Meteo documents current conditions as based on 15-minutely weather-model data.",
+    "weather_request_timestamp": "2026-08-13T10:07:15.890262Z",
+    "weather_raw_response": {
+      "latitude": 17.398945,
+      "longitude": 78.457085,
+      "generationtime_ms": 0.18608570098876953,
+      "utc_offset_seconds": 0,
+      "timezone": "GMT",
+      "timezone_abbreviation": "GMT",
+      "elevation": 505.0,
+      "current_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature_2m": "\u00b0C",
+        "relative_humidity_2m": "%",
+        "precipitation": "mm",
+        "weather_code": "wmo code"
+      },
+      "current": {
+        "time": "2026-08-13T10:00",
+        "interval": 900,
+        "temperature_2m": 29.2,
+        "relative_humidity_2m": 60,
+        "precipitation": 0.1,
+        "weather_code": 51
+      }
+    },
+    "image_capture_timestamp": null
+  },
+  "xai_evidence": {
+    "target_class": "Tomato___Early_blight",
+    "target_class_index": 29,
+    "target_layer_name": "out_relu",
+    "heatmap_reference": "reports\\xai\\gradcam_raw_heatmap.npy",
+    "overlay_reference": "reports\\xai\\gradcam_overlay.png"
+  }
+}

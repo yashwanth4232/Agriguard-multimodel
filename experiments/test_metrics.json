@@ -1,0 +1,10 @@
+{
+  "loss": 0.07602191716432571,
+  "accuracy": 0.9772030886138007,
+  "keras_accuracy": 0.9772030711174011,
+  "precision_weighted": 0.97707868790528,
+  "recall_weighted": 0.9772030886138007,
+  "f1_score_weighted": 0.9770303743753852,
+  "test_examples": 8159,
+  "evaluation_split": "test"
+}

@@ -1,0 +1,44 @@
+{
+  "record_type": "M2-003 verification evidence audit",
+  "verification_execution": {
+    "status": "passed",
+    "source": "user-confirmed successful execution of testing/verify_m2_context.py and testing/verify_m2_context.py --live-weather",
+    "live_open_meteo_request": true,
+    "full_console_output_captured_in_workspace": false
+  },
+  "controlled_test_inputs_from_verifier": {
+    "model1_prediction": {
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "confidence": 0.9400433,
+      "output_dimension": 38
+    },
+    "extracted_crop": "Tomato",
+    "disease_label": "Tomato___Early_blight",
+    "coordinates": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "location_source": "user_selected",
+      "purpose": "controlled verification coordinates"
+    },
+    "growth_stage_tests": {
+      "accepted": ["Seedling", "Vegetative", "Flowering", "Fruiting", "Maturity", "Unknown"],
+      "rejected_example": "Bud"
+    }
+  },
+  "verification_checks": {
+    "successful_api_request": "passed (user-confirmed; individual verifier output was not persisted)",
+    "api_failure_handling": "passed (user-confirmed; individual verifier output was not persisted)",
+    "missing_weather_field_handling": "passed (user-confirmed; individual verifier output was not persisted)",
+    "invalid_location_handling": "passed (user-confirmed; individual verifier output was not persisted)",
+    "invalid_growth_stage_handling": "passed (user-confirmed; individual verifier output was not persisted)",
+    "protected_artifacts_unchanged": "passed (user-confirmed and hash-audited)"
+  },
+  "live_response_capture": {
+    "raw_open_meteo_response": null,
+    "normalized_context": null,
+    "weather_request_timestamp": null,
+    "context_timestamp": null,
+    "reason": "The current verifier prints checks and hashes but does not persist the live response or normalized context; no terminal session output was available to audit."
+  }
+}

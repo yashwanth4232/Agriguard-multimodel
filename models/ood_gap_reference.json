@@ -1,0 +1,13 @@
+{
+  "method": "minimum diagonal-Mahalanobis distance to 38 training-class GAP centroids",
+  "feature_layer": "global_average_pooling2d",
+  "feature_dimension": 1280,
+  "train_samples_per_class": 50,
+  "validation_samples_per_class": 50,
+  "threshold_quantile": 0.99,
+  "threshold": 1.7310620665550207,
+  "selection_note": "Validation data selects a 1% in-domain rejection operating point; no external OOD benchmark claim.",
+  "model_sha256": "ec85000f75c76935e3c6a54a13abd4e8e3feb5b8187c4ebb5d5c8166b387c91b",
+  "split_sha256": "b62f8b5cdb46813df4268e67769f465e5495cd68633dc0f3206c3871b0f78164",
+  "seed": 20260816
+}
